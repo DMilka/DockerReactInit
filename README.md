@@ -29,7 +29,7 @@
       ```
 ## Use instructions below if u have existing app
 
-- Download your application to the folder where docker-compose.yaml is located
+- Download your application to a new folder on the level where docker-compose.yaml is located
 - In docker-compose.yaml modify lines 13,25
 - Change
   ``` 
