@@ -1,16 +1,7 @@
 version: "3.8"
 
 services:
-  react_init:
-    build:
-      context: .
-      dockerfile: dockerfiles/react_init.dockerfile
-    tty: true
-    stdin_open: true
-    volumes:
-      - ./:/app
-      - ./fitappui:/app/fitappui
-  fitappui:
+  frontend:
     build:
       context: .
       dockerfile: dockerfiles/react.dockerfile
@@ -19,7 +10,7 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - ./fitappui:/app/fitappui
+      - ./frontend:/app/frontend
   npm:
     image: node:18.12.1
     working_dir: /app
@@ -31,4 +22,4 @@ services:
     working_dir: /app
     entrypoint: ["npx"]
     volumes:
-      - ./fitappui:/app/fitappui
+      - ./frontend:/app/frontend
